@@ -1,0 +1,36 @@
+syntax "Haxe" "\.hx$"
+
+color blue "\<(class|abstract|enum|private|public|interface|function|implements|new|static|in|extends|override)\>"
+color magenta "\<(continue|break|true|false|import|package)\>"
+color cyan "\<(case|cast|catch|default|do|dynamic|else|if|extern|for|macro|while)\>"
+color brightred "\<(switch|this|throw|try|typedef|untyped|using|return)\>"
+
+# PARANTHESES
+color cyan "[(){}]" "\[" "\]"
+color magenta "<[^= 	]*>" ""(\\.|[^"])*""
+color magenta "<[^= 	]*>" "'(\\.|[^"])*'"
+
+
+# STRINGS, ETC...
+color green "([a-zA-Z0-9_-]*)\()"
+color green "([a-zA-Z0-9_-.]*)\()"
+color blue "=|=>|<="
+
+
+# NUMBERS
+color yellow "\<([+-]*([0-9]\.)*[0-9]+([eE][+-]?([0-9]\.)*[0-9])*)\>"
+color yellow "0x[0-9a-zA-Z]*"
+
+# SINGLE
+color yellow "\<(var|String)\>"
+color red "super"
+color yellow "\<(\$[a-zA-Z_0-9$]*|[=!<>])\>"
+
+# IMPORT HAXE LIB
+color cyan "(haxe.*|Lambda.*|Math.*)"
+color cyan "<|>"
+color blue "trace"
+
+# COMMENTS
+color brightwhite "(//.*)$"
+color brightwhite start="/\*" end="\*/"
